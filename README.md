@@ -32,6 +32,7 @@ Usage:
     
 ## Evaluation metrics
 `run.py` : runs the evaluation for the overfitted results and the inference results. The inputs are the folder of those dataset. \
+`metrics/scripts/overfit.sh` : commands for overfitting the model for the evaluation \
 `metrics/scripts/basic.sh` : basic commands for the evaluation \
 `metrics/scripts/ablation.sh` : commands for ablation study \
 `metrics/scripts/training_tracking.sh` : commands for tracking the training performance

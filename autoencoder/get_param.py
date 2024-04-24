@@ -40,7 +40,7 @@ def params():
 	parser.add_argument('--max_speed', default=1, type=float, help='max speed for boundary conditions in dataset (default: 1)')
 	parser.add_argument('--lr', default=0.001, type=float, help='learning rate of optimizer (default: 0.001)')
 	parser.add_argument('--lr_grad', default=0.001, type=float, help='learning rate of optimizer (default: 0.001)')
-	parser.add_argument('--clip_grad_norm', default=None, type=float, help='gradient norm clipping (default: None)')
+	parser.add_argument('--clip_grad_norm', default=1, type=float, help='gradient norm clipping (default: None)')
 	parser.add_argument('--clip_grad_value', default=None, type=float, help='gradient value clipping (default: None)')
 	parser.add_argument('--log', default=True, type=str2bool, help='log models / metrics during training (turn off for debugging)')
 	parser.add_argument('--log_grad', default=False, type=str2bool, help='log gradients during training (turn on for debugging)')
@@ -58,8 +58,8 @@ def params():
 	
 	# Fluid parameters
 	parser.add_argument('--rho', default=1, type=float, help='fluid density rho')
-	parser.add_argument('--mu', default=1, type=float, help='fluid viscosity mu')
-	parser.add_argument('--dt', default=1, type=float, help='timestep of fluid integrator')
+	parser.add_argument('--mu', default=0.5, type=float, help='fluid viscosity mu')
+	parser.add_argument('--dt', default=4, type=float, help='timestep of fluid integrator')
 	
 	# Load parameters
 	parser.add_argument('--load_date_time', default=None, type=str, help='date_time of run to load (default: None)')
@@ -67,15 +67,15 @@ def params():
 	parser.add_argument('--load_optimizer', default=False, type=str2bool, help='load state of optimizer (default: True)')
 	parser.add_argument('--load_latest', default=False, type=str2bool, help='load latest version for training (if True: leave load_date_time and load_index None. default: False)')
 
-	parser.add_argument('--lrS', default=0.001, type=float, help='Solver learning rate')
-	parser.add_argument('--lrG', default=0.001, type=float, help='Generator learning rate')
+	parser.add_argument('--lrS', default=0.0001, type=float, help='Solver learning rate')
+	parser.add_argument('--lrG', default=0.0000001, type=float, help='Generator learning rate')
 	parser.add_argument('--n_time_frames', default=64, type=int, help='Set the number of time frames')
 	parser.add_argument('--last_frames', default=32, type=int, help='Set the number of frames to be used by generator')
-	parser.add_argument('--n_init_problems', default=4, type=int, help='Set the number of initial fluid dynamic problems')
-	parser.add_argument('--time_frames_threshold', default=64, type=int, help='Set the time frames number to generate new problems')
-	parser.add_argument('--epochG', default=10, type=int, help='Set the number of epochs for generator each turn')
+	parser.add_argument('--n_init_problems', default=2, type=int, help='Set the number of initial fluid dynamic problems')
+	parser.add_argument('--time_frames_threshold', default=32, type=int, help='Set the time frames number to generate new problems')
+	parser.add_argument('--epochG', default=20, type=int, help='Set the number of epochs for generator each turn')
 	parser.add_argument('--min_obj_thre', default=0.01, type=float, help='Set the minimum object threshold')
-	parser.add_argument('--max_obj_thre', default=0.2, type=float, help='Set the maximum object threshold')
+	parser.add_argument('--max_obj_thre', default=0.1, type=float, help='Set the maximum object threshold')
 	parser.add_argument('--problem_pool_size', default=2000, type=int, help='Set the maximum size of problem set')
 	parser.add_argument('--renewal_pool_size', default=1000, type=int, help='Set the size of renewal problem set')
 	parser.add_argument('--output_dir', default='./train_logs', type=str, help='Set the output directory')

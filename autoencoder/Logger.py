@@ -162,7 +162,7 @@ class Logger():
 		with open(path,"wb") as f:
 			pickle.dump(dic,f)
 	
-	def load_state(self,model,optimizer,datetime=None,index=None,continue_datetime=False):
+	def load_state(self,model,optimizer,datetime=None,index=None,continue_datetime=False,explicit_weights=None):
 		"""
 		loads state of model and optimizer
 		:model: model to load (if list: load multiple models)
@@ -170,6 +170,7 @@ class Logger():
 		:datetime: date and time from run to load (if None: take latest folder)
 		:index: index of state to load (e.g. specific epoch) (if None: take latest index)
 		:continue_datetime: flag whether to continue on this run. Default: False
+		:explicit_weights: explicit weights to load (if None: load latest weights)
 		:return: datetime, index (helpful, if datetime / index wasn't given)
 		"""
 		
@@ -190,19 +191,23 @@ class Logger():
 				index = os.path.splitext(natsorted(files)[-1])[0]
 				break
 		
-		path = 'Logger/{}/{}/states/{}.state'.format(self.name,datetime,index)
-		state = torch.load(path)
+		if explicit_weights is not None:
+			model.load_state_dict(torch.load(explicit_weights))
 		
-		if type(model) is not list:
-			model = [model]
-		for i,m in enumerate(model):
-			m.load_state_dict(state['model{}'.format(i)])
-		
-		if optimizer is not None:
-			if type(optimizer)is not list:
-				optimizer = [optimizer]
-			for i,o in enumerate(optimizer):
-				o.load_state_dict(state['optimizer{}'.format(i)])
+		else:
+			path = 'Logger/{}/{}/states/{}.state'.format(self.name,datetime,index)
+			state = torch.load(path)
+			
+			if type(model) is not list:
+				model = [model]
+			for i,m in enumerate(model):
+				m.load_state_dict(state['model{}'.format(i)])
+			
+			if optimizer is not None:
+				if type(optimizer)is not list:
+					optimizer = [optimizer]
+				for i,o in enumerate(optimizer):
+					o.load_state_dict(state['optimizer{}'.format(i)])
 		
 		return datetime, index
 	

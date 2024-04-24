@@ -1,3 +1,4 @@
+# Given input dataset and PINN solver weight, inference
 import os
 import random
 import torch
@@ -13,15 +14,10 @@ import sys
 sys.path.append('../')
 from derivatives import dx,dy,dx_left,dy_top,dx_right,dy_bottom,laplace,map_vx2vy_left,map_vy2vx_top,map_vx2vy_right,map_vy2vx_bottom,normal2staggered,toCuda,toCpu,params
 from derivatives import vector2HSV,rot_mac, params
-# from setups import Dataset
 from Logger import Logger,t_step
 import tqdm
 import logging
-'''
-import sys
-sys.path.append('./')
-import networks
-'''
+
 from pde_cnn import get_Net
 from inference_dataloader import get_validation_dataloader
 

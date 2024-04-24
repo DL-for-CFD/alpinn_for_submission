@@ -1,3 +1,5 @@
+# Data loader for group processing inference data
+
 import os
 import torch
 from torch.utils.data import Dataset, DataLoader

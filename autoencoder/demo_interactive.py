@@ -23,11 +23,12 @@ dt = params.dt
 w,h = params.width,params.height
 n_time_steps=params.average_sequence_length
 save_movie=False#True#
+explicit_weights = params.explicit_weights
 
 # load fluid model:
 logger = Logger(get_param.get_hyperparam(params),use_csv=False,use_tensorboard=False)
 fluid_model = toCuda(get_Net(params))
-date_time,index = logger.load_state(fluid_model,None,datetime=params.load_date_time,index=params.load_index)
+date_time,index = logger.load_state(fluid_model,None,datetime=params.load_date_time,index=params.load_index,explicit_weights=explicit_weights)
 fluid_model.eval()
 print(f"loaded {params.net}: {date_time}, index: {index}")
 

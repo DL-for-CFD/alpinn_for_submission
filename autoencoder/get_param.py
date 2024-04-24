@@ -80,6 +80,8 @@ def params():
 	parser.add_argument('--renewal_pool_size', default=1000, type=int, help='Set the size of renewal problem set')
 	parser.add_argument('--output_dir', default='./train_logs', type=str, help='Set the output directory')
 
+	parser.add_argument('--explicit_weights', default=None, type=str, help='Set explicit_weights as pth format for interactive demos')
+
 	# parse parameters
 	params = parser.parse_args()
 	

@@ -1,4 +1,5 @@
-# Given input dataset and PINN solver weight, inference
+# Given input dataset and PINN solver weight, get and save inference results
+
 import os
 import random
 import torch
@@ -149,4 +150,4 @@ with torch.no_grad():
             output_file_path = os.path.join(output_dir_v, output_file_name)
             np.save(output_file_path, output.squeeze(0).cpu().numpy())
         
-print(torch.mean(torch.stack(errG)))
+print("Loss", torch.mean(torch.stack(errG)))

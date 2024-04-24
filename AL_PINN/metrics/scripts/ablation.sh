@@ -1,21 +1,3 @@
-tmux
-zsh
-conda activate pinn
-
-cd 
-export CUDA_VISIBLE_DEVICES=
-
-
-tmux attach -t 
-tmux kill-session
-
-
-test_0  test_1  test_2  test_3
-airfoil  complex  cylinder
-/project/t3_zxiaoal/Validation_Dataset/ablation_result
-/project/t3_zxiaoal/Validation_Dataset/ablation_result_v
---use_v
-
 for t in 0 1 2 3
 do
 for d in airfoil complex cylinder
@@ -48,8 +30,6 @@ done
 
 
 
-# 100
-/project/t3_zxiaoal/Validation_Dataset/ablation_result_100
 
 for t in 0 1 2 3
 do

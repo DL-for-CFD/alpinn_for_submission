@@ -1,19 +1,3 @@
-tmux
-zsh
-conda activate pinn
-
-cd AL_PINN/autoencoder
-export CUDA_VISIBLE_DEVICES=
-
-
-tmux attach -t 
-tmux kill-session
-
-
-/project/t3_zxiaoal/Validation_Dataset/dt4_rlpinn_normalized
-/project/t3_zxiaoal/Validation_Dataset/dt4_baseline_normalized
-
-
 for task in airfoil complex cylinder
 do
 i=0
@@ -72,10 +56,8 @@ done
 done
 
 
-# supplementary
- complex cylinder
 
-#  !pinn
+# pinn
 for task in complex complex cylinder
 do
 i=0

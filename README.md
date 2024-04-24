@@ -25,4 +25,8 @@ Usage:
     Press 'y' to decrease flow velocity
 **Note**: The interface is only tested on Windows 11
 
+## Evaluation tools
+
+*evaluation/inference.py* : given an input dataset and a PINN solver weight, obtain the inference results
+*evaluation/visualization.py* : given inference results in .npy, visualize the results and save as .gif and .png.
     

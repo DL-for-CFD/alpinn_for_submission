@@ -23,5 +23,6 @@ Usage:
     Use mouse to drag the objects
     Press 'x' to increase flow velocity
     Press 'y' to decrease flow velocity
+**Note**: The interface is only tested on Windows 11.
 
     

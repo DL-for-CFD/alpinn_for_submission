@@ -3,7 +3,7 @@ LIU, Ran; XIAO, Ziruo; ZENG, Lingqi; ZHANG, Rushan (ordered alphabetically by la
 
 ## Install
 ```
-cd RL_PINN
+cd AL_PINN
 ```
 
 ```
@@ -12,5 +12,10 @@ conda env create -f environment.yml
 
 ## Train
 ```
-python 
+python train_ours.py
+```
+
+## Interactive interface
+```
+python interface.py --explicit_weights ./pretrain_weights/ours.pth
 ```

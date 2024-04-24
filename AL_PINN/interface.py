@@ -13,10 +13,6 @@ import numpy as np
 import time
 import os
 
-torch.manual_seed(1)
-torch.set_num_threads(4)
-np.random.seed(6)
-
 mu = params.mu
 rho = params.rho
 dt = params.dt

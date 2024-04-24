@@ -1,0 +1,50 @@
+name: vmaf
+channels:
+  - defaults
+dependencies:
+  - bzip2=1.0.8=h620ffc9_4
+  - ca-certificates=2023.01.10=hca03da5_0
+  - ffmpeg=4.2.2=h04105a8_0
+  - freetype=2.12.1=h1192e45_0
+  - gettext=0.21.0=h13f89a0_1
+  - gmp=6.2.1=hc377ac9_3
+  - gnutls=3.6.15=h887c41c_0
+  - icu=68.1=hc377ac9_0
+  - lame=3.100=h1a28f6b_0
+  - libcxx=14.0.6=h848a8c0_0
+  - libffi=3.4.2=hca03da5_6
+  - libiconv=1.16=h1a28f6b_2
+  - libidn2=2.3.1=h1a28f6b_0
+  - libopus=1.3=h1a28f6b_1
+  - libpng=1.6.39=h80987f9_0
+  - libtasn1=4.19.0=h80987f9_0
+  - libunistring=0.9.10=h1a28f6b_0
+  - libvpx=1.10.0=hc377ac9_0
+  - libxml2=2.10.3=h372ba2a_0
+  - llvm-openmp=14.0.6=hc6e5704_0
+  - ncurses=6.4=h313beb8_0
+  - nettle=3.7.3=h84b5d62_1
+  - openh264=1.8.0=h98b2900_0
+  - openssl=1.1.1t=h1a28f6b_0
+  - pip=23.0.1=py38hca03da5_0
+  - python=3.8.16=hc0d8a6c_3
+  - readline=8.2=h1a28f6b_0
+  - setuptools=66.0.0=py38hca03da5_0
+  - sqlite=3.41.2=h80987f9_0
+  - tk=8.6.12=hb8d0fd4_0
+  - wheel=0.38.4=py38hca03da5_0
+  - x264=1!152.20180806=h1a28f6b_0
+  - xz=5.2.10=h80987f9_1
+  - zlib=1.2.13=h5a0b063_0
+  - pip:
+      - ffmpeg-progress-yield==0.7.2
+      - ffmpeg-quality-metrics==3.2.1
+      - meson==1.1.0
+      - numpy==1.24.3
+      - pandas==2.0.1
+      - python-dateutil==2.8.2
+      - pytz==2023.3
+      - six==1.16.0
+      - tqdm==4.65.0
+      - tzdata==2023.3
+prefix: /Users/lingqi/miniconda3/envs/vmaf

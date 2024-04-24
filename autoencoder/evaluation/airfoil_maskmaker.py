@@ -1,4 +1,4 @@
-# Make airfoil cond masks for airfoil type evaluation data 
+# Make airfoil cond masks for airfoil type evaluation data
 
 import torch
 import numpy as np

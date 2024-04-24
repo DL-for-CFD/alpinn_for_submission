@@ -1,7 +1,7 @@
 for task in airfoil complex cylinder
 do
 i=0
-while [ $i -le 149 ]; do
+while [ $i -le 199 ]; do
   python AL_PINN/metrics/run.py --gt_dir=/project/t3_zxiaoal/Validation_Dataset/dt4_overfitted/$task\_normalized --ds_dir=/project/t3_zxiaoal/Validation_Dataset/dt4_rlpinn_normalized/$task$i --feature=tracking --store_dir=AL_PINN/metrics/res/tracking/$task$i > AL_PINN/metrics/log/tracking_pinn_$task$i.log
   if [ $i -eq 0 ]; then
     i=$((i+9))
@@ -77,7 +77,7 @@ done
 for task in airfoil complex cylinder
 do
 i=0
-while [ $i -le 159 ]; do
+while [ $i -le 199 ]; do
   python AL_PINN/metrics/run.py --gt_dir=/project/t3_zxiaoal/Validation_Dataset/dt4_overfitted_v/$task\_normalized --ds_dir=/csproject/t3_lzengaf/lzengaf/fyp/zxiaoal/dt4_rlpinn_normalized_v/$task$i --feature=tracking --store_dir=AL_PINN/metrics/res/tracking/tracking_rlpinn_normalized_$task$i --use_v   > AL_PINN/metrics/log/tracking_rlpinn_normalized_$task$i\_v.log
   if [ $i -eq 0 ]; then
     i=$((i+9))
